@@ -58,4 +58,4 @@ static string profileFilePath = Path.Combine(profileDirectory, "profile.json");
 ![App Screenshot](https://imgur.com/E2MQCs6.png)
 ![App Screenshot](https://imgur.com/XlJ4m9V.png)
 ![App Screenshot](https://imgur.com/P3s395Z.png)
-![App Screenshot](https://imgur.com/9Iae9eO.png)
+![App Screenshot](https://imgur.com/H24FJfB.png)
