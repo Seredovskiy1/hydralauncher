@@ -19,7 +19,7 @@ LZMA-SDK
 HtmlAgilityPack
 ```
 
-### You also can LAUNCH executable file in ``` minecraft_launcher/bin/Debug/minecraft_launcher.exe```
+### You also can LAUNCH executable file in ```minecraft_launcher/bin/Debug/minecraft_launcher.exe```
 
 #### If you have ```LINUX```:
 
