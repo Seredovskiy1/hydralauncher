@@ -109,3 +109,6 @@
 /home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/obj/x86/Debug/minecraft_launcher.csproj.CopyComplete
 /home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/obj/x86/Debug/minecraft_launcher.exe
 /home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/obj/x86/Debug/minecraft_launcher.pdb
+/home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/bin/Debug/CmlLib.Core.Installer.Forge.dll
+/home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/bin/Debug/HtmlAgilityPack.dll
+/home/iurii/Документи/cs_projects/minecraft_launcher/minecraft_launcher/bin/Debug/HtmlAgilityPack.pdb

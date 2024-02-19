@@ -43,6 +43,12 @@
       <HintPath>..\packages\CmlLib.Core.3.3.9\lib\netstandard2.0\CmlLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.48\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="CmlLib.Core.Installer.Forge">
+      <HintPath>..\packages\CmlLib.Core.Installer.Forge.0.0.2\lib\netstandard2.0\CmlLib.Core.Installer.Forge.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

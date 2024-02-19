@@ -1,8 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
-using Newtonsoft.Json;
 using CmlLib.Core;
 using CmlLib.Core.Auth;
+using CmlLib.Core.Downloader;
+using CmlLib.Core.Installer.Forge;
+using Newtonsoft.Json;
 
 namespace minecraft_launcher
 {
@@ -30,6 +33,9 @@ namespace minecraft_launcher
                 }
             }
 
+            Console.Clear();
+
+
 
             Console.WriteLine("Type your nickname" + (string.IsNullOrEmpty(username) ? "" : " [DEFAULT: " + username + "]") + ": ");
             var inputUsername = Console.ReadLine().Trim();
@@ -40,6 +46,9 @@ namespace minecraft_launcher
 
             Console.WriteLine("Type minecraft version" + (string.IsNullOrEmpty(lastVersion) ? "" : " [DEFAULT: " + lastVersion + "]") + ": ");
             var inputVersion = Console.ReadLine().Trim();
+
+
+
 
             // Використання введеної версії або збереженої раніше
             string versionSelected = string.IsNullOrEmpty(inputVersion) ? lastVersion : inputVersion;
@@ -53,7 +62,23 @@ namespace minecraft_launcher
             System.Net.ServicePointManager.DefaultConnectionLimit = 256;
             var path = new MinecraftPath();
             var launcher = new CMLauncher(path);
-            var defaultVersion = "1.8.9";
+
+            launcher.FileChanged += (e) =>
+            {
+                Console.WriteLine("FileKind: " + e.FileKind.ToString());
+                Console.WriteLine("FileName: " + e.FileName);
+                Console.WriteLine("ProgressedFileCount: " + e.ProgressedFileCount);
+                Console.WriteLine("TotalFileCount: " + e.TotalFileCount);
+            };
+            launcher.ProgressChanged += (s, e) =>
+            {
+                Console.WriteLine("{0}%", e.ProgressPercentage);
+            };
+
+            var forge = new MForge(launcher);
+            forge.InstallerOutput += (s, e) => Console.WriteLine(e);
+
+            var forge_version = await forge.Install(versionSelected);
 
             // Отримання списку доступних версій гри
             var versions = await launcher.GetAllVersionsAsync();
@@ -62,10 +87,8 @@ namespace minecraft_launcher
                 Console.WriteLine(v.Name);
             }
 
-            // Використання версії гри для створення процесу гри
-            versionSelected = string.IsNullOrWhiteSpace(versionSelected) ? defaultVersion : versionSelected;
 
-            var process = await launcher.CreateProcessAsync(versionSelected, new MLaunchOption
+            var process = await launcher.CreateProcessAsync(forge_version, new MLaunchOption
             {
                 Session = MSession.CreateOfflineSession(username),
                 MaximumRamMb = 2048,

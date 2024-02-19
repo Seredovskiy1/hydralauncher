@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{D6C24A9A-DEEE-4155-81C3-D6B6B5390A1C}|Default">
+  <MonoDevelop.Ide.ItemProperties.minecraft__launcher PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="minecraft_launcher/Program.cs">
+    <Files>
+      <File FileName="minecraft_launcher/Program.cs" Line="50" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="minecraft_launcher" expanded="True">
+            <Node name="minecraft_launcher" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
